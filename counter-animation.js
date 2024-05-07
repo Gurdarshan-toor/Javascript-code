@@ -17,4 +17,19 @@ function counter( id, start, end, duration) {
    }, step);
  }
 
-counter("cus_counter", 0, 1000, 2000);
+// counter("cus_counter", 0, 1000, 2000);
+let viewportHeight = window.innerHeight;
+let itemfromTop = document.getElementById('cus_counter').offsetParent.offsetTop;
+let itemHeight = document.getElementById('cus_counter').offsetParent.offsetHeight;
+let counterDone = false;
+
+function counterOnScroll() {
+    let scrollY = window.scrollY;
+    if( scrollY + viewportHeight > itemfromTop + itemHeight ){
+        if(!counterDone){
+            counterDone = true;
+            counter("cus_counter", 0, 1000, 2000);
+        }
+    }
+}
+document.addEventListener('scroll', () => { counterOnScroll() });
