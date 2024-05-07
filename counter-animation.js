@@ -1,4 +1,3 @@
-------create saksham -----------
 function counter( id, start, end, duration) {
   let obj = document.getElementById(id),
    current = start,
@@ -20,8 +19,8 @@ function counter( id, start, end, duration) {
 
 // counter("cus_counter", 0, 1000, 2000);
 let viewportHeight = window.innerHeight;
-let itemfromTop = document.getElementById('cus_counter').offsetParent.offsetTop;
-let itemHeight = document.getElementById('cus_counter').offsetParent.offsetHeight;
+let itemfromTop = document.getElementById('cus_counter')?.offsetParent.offsetTop;
+let itemHeight = document.getElementById('cus_counter')?.offsetParent.offsetHeight;
 let counterDone = false;
 
 function counterOnScroll() {
